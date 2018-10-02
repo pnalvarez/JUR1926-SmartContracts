@@ -1,0 +1,140 @@
+{% load static %}
+
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Contratos Inteligentes 2018</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'initialContract/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'initialContract/form-validation.css' %}" rel="stylesheet">
+  </head>
+
+  <body class="bg-light">
+
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="{% static 'initialContract/raposa.png' %}" alt="" width="72" height="72">
+        <h2>Contrato Inteligente</h2>
+      </div>
+
+      <div class="row">
+        
+        <div class="col-md-8 order-md-1" style="margin: auto; width: 50%; padding: 10px;">
+          <h4 class="mb-3"></h4>
+          <form class="needs-validation" novalidate="">
+            <div class="row">
+              <div class="col-md-6 mb-3" style="max-width: none;width: 60vw;margin: auto;display: inherit;">
+                <label for="set" style="margin: auto 10px;">Set</label>
+                <input type="text" class="form-control" id="set" placeholder="" value="" required="" style="width: 23vw;height: 3rem;margin-right: 10px;display: inline-block;">
+                <button class="btn btn-primary btn-lg btn-block" type="submit" style="font-size: 14px;padding: 0px;margin-left: 0vw;height: 50px;width:100px;display: inline-block;">Set</button>
+                <div class="invalid-feedback">
+                  Valid input is required.
+                </div>
+              </div>
+              <!-- <div class="col-md-6 mb-3"> -->
+                <!-- <label for="get">Get</label> -->
+                <!-- <input type="text" class="form-control" id="get" placeholder="" value="" required=""> -->
+                <!-- <div class="invalid-feedback"> -->
+                <!-- </div> -->
+              <!-- </div> -->
+            </div> 
+            <hr class="mb-4">
+            <div style="display: -webkit-inline-box;margin-left: 90px;">
+              <button class="btn btn-primary btn-lg btn-block" type="button" style="margin-right: 10px;width: 15vw !important;font-size: 15px;/* margin: auto; */height:50px;width:100px;">Get</button><input type="text" class="form-control" id="set" placeholder="" value="" required="" style="width: 18.5vw;height: 3rem;margin-right: 10px;display: inline-block;">
+              
+            </div>
+            <div style="margin-top: 10px;margin-left: 90px;display: -webkit-inline-box;">
+              <button class="btn btn-primary btn-lg btn-block" type="button" style="width: 15vw !important;font-size: 15px;/* margin: 10px auto; */margin-right: 10px;height:50px;width:200px;">Get Address</button><input type="text" class="form-control" id="set" placeholder="" value="" required="" style="width: 18.5vw;height: 3rem;margin-right: 10px;display: inline-block;">              
+            </div>
+              
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">© 2017-2018 Grupo de Informática</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacy</a></li>
+          <li class="list-inline-item"><a href="#">Terms</a></li>
+          <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+      </footer>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="{% static 'initialContract/jquery-slim.min.js'%}"><\/script>')</script>
+    <script src="{% static 'initialContract/js/popper.min.js' %}"></script>
+    <script src="{% static 'initialContract/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'initialContract/js/holder.min.js' %}"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="{% static 'initialContract/jquery-slim.min.js' %}"><\/script>')</script>
+    <script src="{% static 'initialContract/js/popper.min.js' %}"></script>
+    <script src="{% static 'initialContract/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'initialContract/js/holder.min.js' %}"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
+  </body>
+  
+  <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+  <script src="{% static 'initialContract/js/contract.js' %}"></script>
+
+</html>
