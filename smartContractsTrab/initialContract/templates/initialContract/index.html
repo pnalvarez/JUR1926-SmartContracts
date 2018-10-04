@@ -34,15 +34,14 @@
             <div class="row">
               <div class="col-md-6 mb-3" style="max-width: none;display: inherit;">
 
-                <label for="set" style="margin: auto 10px; width: 135px;">Novo Valor:</label>
+                <label for="setNewValue" style="margin: auto 10px auto 62px; width: 85px;">Novo Valor:</label>
                 
-                <input type="text" class="form-control" id="set" placeholder="" value="" required="" style="width: 23vw;height: 3rem;margin-right: 10px;display: inline-block;">
+                <input type="text" class="form-control" id="setNewValue" placeholder="" value="" required="" style="width: 23vw;height: 3rem;margin-right: 10px;display: inline-block;">
                 
-                <button class="btn btn-primary btn-lg btn-block" type="submit" style="font-size: 14px; padding: 0px; margin-left: 0vw;height: 50px; width:100px; display: inline-block;">Alterar</button>
+                <a class="btn btn-primary btn-lg btn-block" style="font-size: 14px; padding: 0px; margin-left: 0vw;height: 50px; width:100px; display: inline-block;" onclick="definePrazo();">
+                  <label style="margin-top: 15px; color: white;">Alterar</label>
+                </a>
                 
-                <div class="invalid-feedback">
-                  Valid input is required.
-                </div>
               </div>
               <!-- <div class="col-md-6 mb-3"> -->
                 <!-- <label for="get">Get</label> -->
@@ -51,12 +50,17 @@
                 <!-- </div> -->
               <!-- </div> -->
             </div> 
+            <div class="row">
+              <a class="btn btn-primary btn-lg btn-block" style="color: white; width: 40vw; margin: 0 auto; display: block; font-size: 15px;">
+                Dobrar o prazo
+              </a>
+            </div>
             <hr class="mb-4">
-            <div style="display: -webkit-inline-box;">
+            <div style="width: 100px; margin: 0 auto;">
 
-              <button class="btn btn-primary btn-lg btn-block" type="button" style="margin-right: 30px; font-size: 15px;/* margin: auto; */height:50px;width:125px;">Get</button>
+              <!-- <button class="btn btn-primary btn-lg btn-block" type="button" style="display: inline; margin-right: 30px; font-size: 15px;/* margin: auto; */height:50px;width:125px;">Get</button> -->
             
-              <label style="margin: auto 0px; height: 20px;">Prazo: 10 dias</label>
+              <label id="targetLabel" style="margin: 15px 0px;">Prazo: 10 dias</label>
 
             </div>
 
@@ -92,7 +96,7 @@
     <script src="{% static 'initialContract/js/popper.min.js' %}"></script>
     <script src="{% static 'initialContract/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'initialContract/js/holder.min.js' %}"></script>
-    <script>
+<!--     <script>
       // Example starter JavaScript for disabling form submissions if there are invalid fields
       (function() {
         'use strict';
@@ -113,7 +117,7 @@
           });
         }, false);
       })();
-    </script>
+    </script> -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -123,7 +127,9 @@
     <script src="{% static 'initialContract/js/popper.min.js' %}"></script>
     <script src="{% static 'initialContract/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'initialContract/js/holder.min.js' %}"></script>
-    <script>
+    
+    <!-- Tirando validação de inputs -->
+    <!-- <script>
       // Example starter JavaScript for disabling form submissions if there are invalid fields
       (function() {
         'use strict';
@@ -144,8 +150,15 @@
           });
         }, false);
       })();
-    </script>
+    </script> -->
+
   </body>
+
+  <script type="text/javascript">
+    function updateLabel(message){
+      $('#targetLabel').text("Prazo: " + message + " dias");
+    }
+  </script>
   
   <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
   <script src="{% static 'initialContract/js/contract.js' %}"></script>
