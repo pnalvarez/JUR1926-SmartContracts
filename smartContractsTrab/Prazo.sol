@@ -1,50 +1,58 @@
 pragma solidity ^0.4.0;
-
-contract Prazo {
-    
-    uint prazo;
-    uint maxPrazo;
-    address owner;
+ 
+contract SmartContractDoPrazo {
+    uint prazoEmDias;
+    uint limitePrazo;
     address contratante;
-    
-    event Erro(string);
-    
-    constructor (uint maxPrazoDefinido, address newContratante) public {
-        owner = msg.sender;
-        maxPrazo = maxPrazoDefinido;
-        contratante = newContratante;
+    address contratado;
+    bool autoriza = false;
+
+    constructor (uint _dias, uint _limite, address _contratado) public
+    {
+        contratante = msg.sender;
+        contratado = _contratado;
+        prazoEmDias = _dias;
+        limitePrazo = _limite;
+
     }
-    
-    function setPrazo(uint novoPrazo) soDono public {
-        if(novoPrazo < maxPrazo) {
-            prazo = novoPrazo;
-        } else {
-            emit Erro('Novo prazo é maior que o prazo máximo!');
+
+    function autoriarDobrarPrazo() public
+    {
+        require(msg.sender == contratante, "Somente o dono pode autorizar dobrar prazo");
+        autoriza = true;
+    }
+   
+    function definePrazo(uint _dias) public {
+        require(msg.sender == contratante, "Somente o dono do contrato pode alterar o prazo");
+        require(autoriza == true, "O contratante não autorizou.");
+        if(_dias < limitePrazo)
+        {
+            prazoEmDias = _dias;
         }
-    }
-    
-    function dobraPrazo() soDono public {
-        uint newValue = 2*prazo;
-        if(newValue < maxPrazo) {
-            prazo = newValue;
-        } else {
-            emit Erro('Novo prazo é maior que o prazo máximo!');
+        else
+        {
+            prazoEmDias = limitePrazo;
         }
+        autoriza = false;
     }
-    
-    function getPrazo() public view returns(uint) {
-        return prazo;
+   
+    function dobrarLimite() public
+    {
+        require(contratante == msg.sender, "Somente o dono do contrato pode dobrar o limite");
+        require(autoriza == true, "O contratante não autorizou.");
+        uint _aux = prazoEmDias * 2;
+        if(_aux < limitePrazo)
+        {
+            prazoEmDias = _aux;
+        }
+        else
+        {
+            prazoEmDias = limitePrazo;
+        }
+	    autoriza = false;
     }
-    
-    modifier soDono() {
-        require(owner == msg.sender);
-        _;
+   
+    function obtemPrazo() public view returns (uint) {
+        return prazoEmDias;
     }
-    
-    modifier soDonoEContratante(address outraParte) {
-        require(owner == msg.sender);
-        require(contratante == outraParte);
-        _;
-    }
-    
 }
