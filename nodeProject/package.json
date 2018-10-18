@@ -1,0 +1,15 @@
+{
+  "name": "smart_contracts",
+  "version": "1.0.0",
+  "description": "Projeto de teste de interacao com um smart contract",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabriel DJB",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
+  }
+}

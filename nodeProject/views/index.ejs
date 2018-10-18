@@ -1,0 +1,98 @@
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Contratos Inteligentes 2018</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+  </head>
+
+  <body class="bg-light">
+
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="/raposa.png" alt="" width="72" height="72">
+        <h2>Contrato Inteligente</h2>
+      </div>
+
+      <div class="row">
+        
+        <div class="col-md-8 order-md-1" style="margin: auto; width: 50%; padding: 10px;">
+          <h4 class="mb-3"></h4>
+          <form class="needs-validation" novalidate="">
+            <div class="row">
+              <div class="col-md-6 mb-3" style="max-width: none;display: inherit;">
+
+                <label for="setNewValue" style="margin: auto 10px auto 62px; width: 85px;">Novo Valor:</label>
+                
+                <input type="text" class="form-control" id="setNewValue" placeholder="" value="" required="" style="width: 23vw;height: 3rem;margin-right: 10px;display: inline-block;">
+                
+                <a class="btn btn-primary btn-lg btn-block" style="font-size: 14px; padding: 0px; margin-left: 0vw;height: 50px; width:100px; display: inline-block;" onclick="definePrazo();">
+                  <label style="margin-top: 15px; color: white;">Alterar</label>
+                </a>
+                
+              </div>
+              <!-- <div class="col-md-6 mb-3"> -->
+                <!-- <label for="get">Get</label> -->
+                <!-- <input type="text" class="form-control" id="get" placeholder="" value="" required=""> -->
+                <!-- <div class="invalid-feedback"> -->
+                <!-- </div> -->
+              <!-- </div> -->
+            </div> 
+            <div class="row">
+              <a class="btn btn-primary btn-lg btn-block" style="color: white; width: 40vw; margin: 0 auto; display: block; font-size: 15px;">
+                Dobrar o prazo
+              </a>
+            </div>
+            <hr class="mb-4">
+            <div style="width: 100px; margin: 0 auto;">
+
+              <!-- <button class="btn btn-primary btn-lg btn-block" type="button" style="display: inline; margin-right: 30px; font-size: 15px;/* margin: auto; */height:50px;width:125px;">Get</button> -->
+            
+              <label id="targetLabel" style="margin: 15px 0px;">Prazo: 10 dias</label>
+
+            </div>
+              
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">© 2017-2018 Grupo de Informática</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacy</a></li>
+          <li class="list-inline-item"><a href="#">Terms</a></li>
+          <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+      </footer>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="/js/jquery-slim.min.js"><\/script>')</script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/holder.min.js"></script>
+
+  </body>
+
+  <script type="text/javascript">
+    function updateLabel(message){
+      $('#targetLabel').text("Prazo: " + message + " dias");
+    }
+  </script>
+  
+  <!-- <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script> -->
+  <!-- <script src="{% static 'initialContract/js/contract.js' %}"></script> -->
+
+</html>
